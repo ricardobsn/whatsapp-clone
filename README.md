@@ -1,3 +1,12 @@
+Projeto para fins de estudo 
+Projeto clone do whatsapp
+
+Tecnologias utilizadas:
+. React
+. CSS
+. 
+******* PROJETO EM ANDAMENTO ********
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
