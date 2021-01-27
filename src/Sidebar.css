@@ -50,6 +50,8 @@
   padding: 10px;
 }
 
-/* .sidebar_chats {
-
-} */
+.sidebar_chats {
+  background-color: white;
+  flex: 1;
+  overflow: scroll;
+}
