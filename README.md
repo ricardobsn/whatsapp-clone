@@ -4,8 +4,9 @@ Projeto clone do whatsapp
 Tecnologias utilizadas:
 . React
 . CSS
-. 
-******* PROJETO EM ANDAMENTO ********
+.firebase para db e deploy
+
+Projeto rodando em  https://whatsapp-clone-f3ddc.web.app
 
 # Getting Started with Create React App
 
