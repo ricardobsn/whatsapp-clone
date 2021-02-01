@@ -1,0 +1,40 @@
+import { Button } from "@material-ui/core";
+import React from "react";
+import { auth, provider } from "./firebase";
+import { useStateValue } from "./StateProvider";
+import { actionTypes } from "./reducer";
+
+import "./Login.css";
+
+function Login() {
+  const [{}, dispatch] = useStateValue();
+
+  const signIn = () => {
+    auth
+      .signInWithPopup(provider)
+      .then((result) => {
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        });
+      })
+      .catch((error) => alert(error.message));
+  };
+
+  return (
+    <div className='login'>
+      <div className='login_container'>
+        <img src='data:image/png;base64,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' />
+        <div className='login_text'>
+          <h1>Sign in</h1>
+        </div>
+
+        <Button type='submit' onClick={signIn}>
+          Sign in with Google
+        </Button>
+      </div>
+    </div>
+  );
+}
+
+export default Login;

@@ -1,16 +1,17 @@
 import React from "react";
 import "./Sidebar.css";
-import FaceIcon from "@material-ui/icons/Face";
-import { IconButton } from "@material-ui/core";
+import { Avatar, IconButton } from "@material-ui/core";
 import DonutLargeIcon from "@material-ui/icons/DonutLarge";
 import ChatIcon from "@material-ui/icons/Chat";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import SidebarChat from "./SidebarChat";
 import db from "./firebase";
+import { useStateValue } from "./StateProvider";
 
 function Sidebar() {
   const [rooms, setRooms] = React.useState([]);
+  const [{ user }, dispatch] = useStateValue();
 
   React.useEffect(() => {
     db.collection("rooms").onSnapshot((snapshot) =>
@@ -26,7 +27,7 @@ function Sidebar() {
   return (
     <div className='sidebar'>
       <div className='sidebar_header'>
-        <FaceIcon />
+        <Avatar src={user?.photoURL} />
         <div className='sidebar_headerRight'>
           <IconButton>
             <DonutLargeIcon />
